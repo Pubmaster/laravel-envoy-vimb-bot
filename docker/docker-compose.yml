@@ -12,6 +12,6 @@ services:
     build:
       context: ./composer
     restart: 'no'
-    command: 'composer install'
+    command: 'composer'
     volumes:
       - ../:/var/www
