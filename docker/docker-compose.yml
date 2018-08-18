@@ -1,0 +1,17 @@
+version: '3'
+services:
+  envoy:
+    build:
+      context: ./envoy
+    restart: 'no'
+    command: '/var/www/vendor/bin/envoy run deploy'
+    volumes:
+      - ../:/var/www
+
+  composer:
+    build:
+      context: ./composer
+    restart: 'no'
+    command: 'composer install'
+    volumes:
+      - ../:/var/www
